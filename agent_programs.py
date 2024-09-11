@@ -7,6 +7,8 @@ from connect_four_environment import ConnectFourEnvironment
 from une_ai.models import GraphNode, MCTSGraphNode
 from minimax_functions import minimax, minimax_alpha_beta, optimised_minimax
 from mcts_functions import mcts
+from connect_four_ttable import ConnectFourTTable
+
 
 # Initialize the transposition table
 tt = ConnectFourTTable()
