@@ -51,6 +51,7 @@ class ConnectFourPlayer(Agent):
         else:
             raise AttributeError(f"Actuator '{actuator_name}' not found")
 
+    @staticmethod
     def validate_gridmap(value):
         try:
             if isinstance(value, GridMap):
@@ -60,16 +61,19 @@ class ConnectFourPlayer(Agent):
             print(f"Validation failed: {e}")
         return False
 
+    @staticmethod
     def validate_powerups(value):
         if isinstance(value, dict) and 'Y' in value and 'R' in value:
             return True
         return False
 
+    @staticmethod
     def validate_turn_indicator(value):
         if value in ['Y', 'R']:
             return True
         return False
 
+    @staticmethod
     def validate_checker_handler(value):
         if isinstance(value, tuple) and len(value) == 2:
             action_type, column = value
@@ -77,5 +81,6 @@ class ConnectFourPlayer(Agent):
                 return True
         return False
 
+    @staticmethod
     def validate_powerup_selector(value):
         return isinstance(value, bool)
